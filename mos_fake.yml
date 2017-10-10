@@ -1,0 +1,37 @@
+author: Halarious
+description: An app that deals with shit
+version: 1.0
+
+tags:
+  - c
+  - c++
+
+sources:
+  - src
+
+filesystem:
+  - fs
+
+config_schema:
+  - ["wifi.sta.enable", false]
+  - ["mqtt.enable", false]
+  - ["mqtt.server", ".iot.eu-central-1.amazonaws.com:8883"]
+  - ["mqtt.ssl_ca_cert", "VeriSign-CA.pem"]
+  - ["mqtt.ssl_cert", "8de0500b73-certificate.pem.crt"]
+  - ["mqtt.ssl_key", "8de0500b73-private.pem.key"]
+libs:
+    # common mgos libs
+  - origin: https://github.com/mongoose-os-libs/aws
+  - origin: https://github.com/mongoose-os-libs/arduino-adafruit-dht 
+  - origin: https://github.com/mongoose-os-libs/mqtt
+  - origin: https://github.com/mongoose-os-libs/vfs-dev-spi-flash
+
+  - origin: https://github.com/mongoose-os-libs/rpc-service-config
+  
+  - name: arduino-sht1x
+  - name: arduino-TinyGPS
+build_vars:
+  SSL: mbedTLS
+  MANURE_DEBUG: 1
+
+skeleton_version: 2017-05-18

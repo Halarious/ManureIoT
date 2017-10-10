@@ -1,0 +1,1 @@
+mos build --arch=esp8266 --local --repo /home/halarious/FOI/OSS/ManureIoT/mongoose-os
